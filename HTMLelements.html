@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+       
+        .myDiv  
+        {
+            height: 400%;
+            width: 100%;
+            border-radius: 60px;
+            background-color: rgba(238, 194, 208, 0.648);
+            text-align: center;
+        }
+        body 
+        {
+            background-color: rgb(110, 110, 164);        }
+        h1 
+        {
+            color: rgb(68, 131, 152);
+            font-size: 60px;
+            text-align: center;
+        }
+        h2
+        {
+            color: lightblue;
+            font-size: 60px;
+            text-align: center;
+        }
+
+        .form-container 
+        {
+            border: 10px solid rgb(35, 79, 123);
+            padding: 50px;
+            background-color: rgba(238, 194, 208, 0.648);
+
+            margin: 20px auto;
+            width: 400px;
+            border-radius: 50px;
+        }
+
+        .instagram-link 
+        {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+        
+            <li><a href="index.html" onclick="toggleSection('Home')">Index</a></li>
+
+            <li><a href="JavaConcepts.html" onclick="toggleSection('Java  Concepts')">Java Concepts</a></li>
+            
+            <li><a href="Review.html" onclick="toggleSection('Review')">Review</a></li>
+            
+            <li><a href="router.html" onclick="toggleSection('router')">router</a></li>
+
+            <li><a href="vue.html" onclick="toggleSection('Vue Features')">Vue Features</a></li>
+
+        </ul>
+        </nav>
+
+        <title>Daniels Website</title>
+    <div class="myDiv">
+        <h1> Cakes</h1>
+        <h2><b>Chocolate vs Red velvet </b></h2>
+    </div>
+
+    <img src="Velvett.jpg" alt="Image 1" class ="centre" style="border: 8px solid rgba(238, 194, 208, 0.648); float: centre ;">
+
+    <!--a container with a list of items-->
+    <div class="container">
+        <p><b>Additional types of cake</b></p>
+        <ul class="custom-list" id="classDiv">
+            <li>Ice cream </li>
+            <li>Cheesecake</li>
+            <li>Choc ripple cake</li>
+            <li>Banana Cake</li>
+            <li>Vanilla Cake</li>
+            <li>Carrot Cake</li>
+        </ul>
+    </div>
+
+    
+
+    <p class="url"><a href="https://new.lurpak.com/en-au/recipes/red-velvet-cake/?gclid=EAIaIQobChMIy-z41b7RgAMVMI5LBR3JAQ2JEAAYASAAEgJX4_D_BwE&gclsrc=aw.ds">How to make a red velvet cake</a></p>
+    <p class="url"><a href="https://www.bakingenvy.com/the-ultimate-chocolate-mud-cake/">How to make a chocolate mud cake</a></p>
+
+ <img src="choc.jpg" alt="Chocolate mud cake" style="border: 8px solid rgba(238, 194, 208, 0.648); display: block; margin: 20px auto;">
+
+    <!-- the code for the table shown in the page-->
+    <table style="border: 10px solid rgb(35, 79, 123); margin: 60px auto; border-collapse: collapse;">
+        <tr>
+            <th>Red Velvet cake</th>
+            <th>Chocolate Mud Cake</th>
+        </tr>
+        <tr> 
+            <td>Light and Fluffy</td>
+            <td>Rich</td>
+        </tr>
+      <tr> 
+            <td>Red</td>
+            <td>Chocolate</td>
+        </tr>
+        <tr> 
+            <td>Smooth texture</td>
+            <td>Tasty</td>
+        </tr>
+    </table>
+
+   <!--the main body of writing in the code-->
+   <div style="border: 4px solid rgb(144, 157, 221); padding: 10px; margin: 20px; text-align:center;">
+   <body> Here is a fun fact about cakes. The earliest cakes were actually flat and compact discs of grain which were dried and compacted together. Isn't that interesting!!! 
+   </body>
+</div>
+
+
+    <div class="form-container"> 
+        <form class="form-group">
+            <label for="name">What is your name?:</label>
+            <input type="text" name="fname">
+            <br>
+            <label for="age">How old are you?</label>
+            <input type="text" name="age">
+        
+            <label for="option">What is your favourite cake?</label>
+            <select name="option">
+                <option selected disabled>Select your cake!</option>
+                <option>Red velvet cake</option>
+                <option>Chocolate mud cake</option>
+                <option>Ice cream cake</option>
+                <option></option>
+            </select>
+            <br>
+
+            <div>
+                <fieldset>
+                    <h4> True or False, to make a chocolate mud cake you need vanilla essence.</h4>
+                    <label><input type="radio" name="game" />True</label>
+                    <br/>
+                    <label><input type="radio" name="game" />False</label>
+                    <br/>
+                   
+                </fieldset>
+            </div>
+            <div>
+                <fieldset>
+                    <textarea cols="40" rows="6" placeholder="Any further comments are appreciated!"></textarea>
+                </fieldset>
+            </div>
+            <div>
+                <input type="submit" value="Submit" />
+            </div>
+        </form>
+    </div>
+</body>
+</html>

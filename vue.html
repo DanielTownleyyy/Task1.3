@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <nav>
+        <ul>
+        
+        <li><a href="index.html" ('Home')">Home</a></li>
+
+        <li><a href="HTMLElements.html" ('HTML Elements')">HTML Elements</a></li>
+        
+        <li><a href="Review.html" ('Review')">Review</a></li>
+                
+        <li><a href="JavaConcepts.html" ('Java Concepts)">Java Concepts</a></li>
+
+        <li><a href="router.html" onclick="toggleSection('router')">router</a></li>
+
+
+        </ul>
+        </nav>
+      
+        
+  <title> </title>
+  <style>
+    #app {
+      border: dashed black 1px;
+      display: inline-block;
+      padding: 0 20px;
+    }
+    #app label {
+      padding: 5px;
+    }
+    #app label:hover {
+      cursor: pointer;
+      background-color: lightgray;
+      border-radius: 5px;
+    }
+    ul {
+      list-style-type: none;
+    }
+    li {
+      border-radius: 5px;
+      padding: 5px;
+      margin: 2px;
+      background-color: rgb(211, 254, 211);
+    }
+    .impClass {
+      background-color: rgb(255, 202, 202);
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Example: Sports List </h1>
+
+<h2>Vue Functions: 
+</h2>
+
+
+<p>List some sports and answer true if you have played them before or false.</p>
+<div id="app">
+  <form v-on:submit.prevent="addItem">
+    <p>
+      What do you need? <br>
+      <input type="text" required placeholder="item name.." v-model="itemName">
+    </p>
+    <p>
+      How many? <br>
+      <input type="number" placeholder="number of items.." v-model="itemNumber">
+    </p>
+    <p>
+      Important?
+      <label>
+        <input type="checkbox" v-model="itemImportant">
+        {{ itemImportant }}
+      </label>
+    </p>
+    <button type="submit">Add item</button>
+  </form>
+  <br>
+  <hr>
+
+  <div>
+    <p><strong>Sports list</strong></p>
+    <ul>
+      <li v-for="item in SportsList" v-bind:class="{ impClass: item.important }">{{ item.name }}, {{ item.number}}</li>
+    </ul>
+  </div>
+</div>
+
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        itemName: null,
+        itemNumber: null,
+        itemImportant: false,
+        SportsList: [
+          { name: 'Tennis', number: 5, important: false }
+        ]
+      }
+    },
+    methods: {
+      addItem(){
+        let item = {
+          name: this.itemName,
+          number: this.itemNumber,
+          important: this.itemImportant
+        }
+        this.SportsList.push(item)
+        this.itemName = null
+        this.itemNumber = null  
+        this.itemImportant = false
+      }
+    }
+  })
+ app.mount('#app')
+</script>
+
+</body>
+
+
+                        
+                        
+
+</html>

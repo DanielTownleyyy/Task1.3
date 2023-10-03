@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script>
+// JavaScript function to toggle section visibility
+function toggleSection(sectionId) {
+var sections = document.querySelectorAll('main section');
+sections.forEach(function(section) {
+section.style.display = 'none';
+});
+var selectedSection = document.getElementById(sectionId);
+selectedSection.style.display = 'block';
+}
+</script>
+</head>
+<body>
+
+<nav>
+<ul>
+
+<li><a href="index.html" onclick="toggleSection('Home')">Home</a></li>
+
+<li><a href="HTMLElements.html" onclick="toggleSection('HTML Elements')">HTML Elements</a></li>
+
+<li><a href="JavaConcepts.html" onclick="toggleSection('Java  Concepts')">Java Concepts</a></li>
+
+<li><a href="router.html" onclick="toggleSection('router')">router</a></li>
+
+<li><a href="vue.html" onclick="toggleSection('Vue Features')">Vue Features</a></li>
+
+
+</ul>
+</nav>
+
+<header>
+    <h1>Review / Summary</h1>
+    </header>
+
+<main>
+
+    <section id="HTMLElements">
+        <h2>Overview</h2>
+        <p>Hello, My name is Daniel Townley and I am currently studying at Deakin University.
+            I am a student currently completing SIT120.
+            This unit has allowed me to test my website making skills to the maximum, and has enabled me to thrive in the subject. This unit has also enabled me to increase my knowledge within HTML and many different other coding languages and techniques. I have learned how to implement html elements, use a css stylesheet to format my website, include java concepts within my website and include user inputs and outputs, and now have learned how to use vue to my advantage. All in all i have loved undertaking this unit and cannot wait to further my knowledge of the subject next year!!! - Daniel Townley
+        </p>
+        </section>
+        
+  
+        <img src="career-in-technology-feature.png.webp" alt="Image 1" class ="centre" style="border: 8px solid rgba(238, 194, 208, 0.648); float: centre ;">
+
+
+</main>
+</body>
+</html>

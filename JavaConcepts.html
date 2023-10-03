@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>JavaScript Methods</title>
+   
+</head>
+<body>
+
+
+ 
+    <nav>
+        <ul>
+        
+        <li><a href="index.html" onclick="toggleSection('Home')">Home</a></li>
+
+        <li><a href="HTMLElements.html" onclick="toggleSection('HTML Elements')">HTML Elements</a></li>
+        
+        <li><a href="Review.html" onclick="toggleSection('Review')">Review</a></li>
+
+        <li><a href="router.html" onclick="toggleSection('router')">router</a></li>
+                
+        <li><a href="vue.html" onclick="toggleSection('Vue Features')">Vue Features</a></li>
+
+        </ul>
+        </nav>
+        <h1>JavaScript Methods</h1>
+    <h2>User Interaction</h2>
+    <label for="userName">What is your name?:</label>
+    <input type="text" id="userName">
+    <button onclick="welcomeButton()">Welcome Button</button>
+
+    <label for="Num1">Your first Number:</label>
+    <input type="text" id="Num1" style="width: 50px;"> 
+
+    <label for="Num2">Your Second Number:</label>
+    <input type="text" id="Num2" style="width: 50px;"> 
+
+    <button onclick="addNumbers()">Add Numbers</button>
+
+    <label for="Num3">Your Third Number:</label>
+    <input type="text" id="Num3" style="width: 50px;"> 
+
+    <label for="Num4">Your Fourth Number:</label>
+    <input type="text" id="Num4" style="width: 50px;"> 
+
+    <button onclick="subNumbers()">Subtract Numbers</button>
+
+
+    <h2>Function</h2>
+    <p id="functionMethods"></p>
+
+    <h2>Array</h2>
+    <p id="arrayMethods"></p>
+
+    <h2>String</h2>
+    <p id="stringMethods"></p>
+
+    <h2>Date</h2>
+    <p id="dateMethods"></p>
+
+    <h2>Number</h2>
+    <p id="numberMethods"></p>
+
+    <br>  <br>
+
+
+    <img src="java.jpeg" alt="Image 1" class ="centre" style="border: 8px solid rgb(126, 14, 49); float: centre ;">
+
+    <script>
+
+        const string = "Daniel John Townley";
+
+        document.getElementById("stringMethods").innerHTML = `
+            "Daniel John Townley"
+
+            Length of Name: ${string.length}<br>
+
+           Change Name to Uppercase: ${string.toUpperCase()}<br>
+
+            Change Name to Lowercase: ${string.toLowerCase()}<br>
+
+            Substring(3, 4): ${string.substring(3, 4)}<br>
+
+            Replace("John", to "Jibberish"): ${string.replace("John", "Jibberish")}<br>
+        `;
+
+        const now = new Date();
+        const dateString = now.toDateString();
+        const localetimeString = now.toLocaleTimeString();
+        const utcString = now.toUTCString();
+        const gettheday = now.getDay();
+        const fullYear = now.getFullYear();
+
+        document.getElementById("dateMethods").innerHTML = `
+            What is the Date?: ${dateString}<br>
+           What is the time?: ${localetimeString}<br>
+            What is the Year?: ${fullYear}<br>
+            What is the UTC Date?: ${utcString}<br>
+            What day of the Week (0-6): ${gettheday}<br>
+        `;
+        const num = 45.78;
+        document.getElementById("numberMethods").innerHTML = `
+
+            Value: ${num}<br>
+
+            What is the value fixed to 1 decimal: ${num.toFixed(1)}<br>
+            
+            What is a random number between 0 and 1: ${Math.random()}<br>
+
+            What is the number rounded: ${Math.round(num)}<br>
+
+            What is the square root of the Value?: ${Math.sqrt(num)}<br>
+
+            What is the rounded down Value: ${Math.floor(num)}<br>
+        `;
+
+        const mixedArray = ["Daniel", 84, "John", 12, "Townley"];
+        const arrayLength = mixedArray.length;
+        const slicedArray = mixedArray.slice(1, 4);
+        const stringArray = mixedArray.join(", ");
+        const numberArray = mixedArray.map(item => parseFloat(item)).filter(item => !isNaN(item));
+        const sortedArray = mixedArray.slice().sort();
+
+        document.getElementById("arrayMethods").innerHTML = `
+
+            The Original Array: Daniel, 84, John, 12, Townley
+
+            Array Length: ${arrayLength}<br>
+
+            Array to String: ${stringArray}<br>
+
+            Array to Number: [${numberArray}]<br>
+
+            Sliced Array (1, 4): ${slicedArray}<br>
+            
+            Sorted Array: ${sortedArray}<br>
+        `;
+
+        
+
+        function welcomeButton() {
+            const userName = document.getElementById("userName").value;
+            const greeting = `Hello and welcome, ${userName}!`;
+            document.getElementById("functionMethods").innerHTML = ` ${greeting}`;
+        }
+
+        function addNumbers() {
+            const Num1 = parseFloat(document.getElementById("Num1").value);
+            const Num2 = parseFloat(document.getElementById("Num2").value);
+
+            if (!isNaN(Num1) && !isNaN(Num2)) 
+            {
+                const Sum = Num1 + Num2;
+                document.getElementById("functionMethods").innerHTML = `The total of ${Num1} plus ${Num2} is: ${Sum}`;
+            } else 
+            {
+                document.getElementById("functionMethods").innerHTML = "Only put valid / correct numbers in.";
+            }
+        }
+
+        function subNumbers() {
+            const Num3 = parseFloat(document.getElementById("Num3").value);
+            const Num4 = parseFloat(document.getElementById("Num4").value);
+
+            if (!isNaN(Num3) && !isNaN(Num4)) 
+            {
+                const Sum3 = Num3 - Num4;
+                document.getElementById("functionMethods").innerHTML = `The total of ${Num3} minus ${Num4} is: ${Sum3}`;
+            } else 
+            {
+                document.getElementById("functionMethods").innerHTML = "Only put valid / correct numbers in.";
+            }
+        }
+    </script>
+</body>
+</html>
